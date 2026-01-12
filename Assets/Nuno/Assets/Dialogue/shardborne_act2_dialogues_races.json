@@ -1,0 +1,649 @@
+{
+  "metadata": {
+    "title": "ShardBorne — Acto 2: Cidades Rachadas",
+    "version": "1.0.0",
+    "language": "pt-PT",
+    "authoring": "Nuno",
+    "notes": "Baseado no GDD v1 e na estrutura do Acto 1. Introduz o um boss e a possibilidade de ganhar novas habilidades."
+  },
+  "speakers": {
+    "Tharion": {
+      "race": "Noxilith",
+      "portrait": "tharion_portrait",
+      "voice": "vox_noxi"
+    },
+    "Maela": {
+      "race": "Myridian",
+      "portrait": "maela_portrait",
+      "voice": "vox_myr"
+    },
+    "Kael Dorn": {
+      "race": "Noxilith",
+      "portrait": "kael_portrait",
+      "voice": "vox_drak"
+    },
+    "Orrin": {
+      "race": "Drakthar",
+      "portrait": "orrin_portrait",
+      "voice": "vox_drak_old"
+    },
+    "Narrador": {
+      "race": "—",
+      "portrait": "",
+      "voice": "vox_narr"
+    },
+    "Sistema": {
+      "race": "—",
+      "portrait": "",
+      "voice": "vox_sys"
+    },
+    "Guardião": {
+      "race": "Corrompido",
+      "portrait": "guardian_portrait",
+      "voice": "vox_corrupt_low"
+    }
+  },
+  "variables": {
+    "ability_Dash": false,
+    "axe_Evolution": "none",
+    "unlocked_AxeEvolution": false,
+    "has_MainShard_Act2": false,
+    "unlocked_LumivernisHalls": false,
+    "morality_Purity": 0
+  },
+  "scenes": [
+    {
+      "id": "A_Ruinas_Entrada",
+      "nodes": [
+        {
+          "id": "A0_Narrador_Entrada",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Narrador",
+          "speaker_id": "Narrador",
+          "speaker_race": "—",
+          "text": "O Subterrâneo não era um túmulo, mas uma cidade em agonia. Cada cristal rachado era um grito silencioso.",
+          "next": "A1_Tharion_Pensamento",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "music",
+              "cue": "subterraneo_tenso"
+            }
+          ],
+          "comments": "Abertura do Acto 2"
+        },
+        {
+          "id": "A1_Tharion_Pensamento",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "O ar é pesado... sinto-me em casa e perdido ao mesmo tempo.",
+          "next": "A2_Tutorial_Eco",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "A2_Tutorial_Eco",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "O Eco é a energia dos cristais. Absorve-o para poderes especiais.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "tutorial",
+              "text": "O Eco é o teu recurso secundário. Recupera-o ao destruir cristais e inimigos."
+            }
+          ],
+          "comments": "Introdução ao Eco System"
+        },
+        {
+          "id": "A3_Combate_Sombra",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Um Sombra Parasita surge de um cristal rachado.",
+          "next": "A4_Visao_Kael",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "spawn_enemy",
+              "enemy_id": "SombraParasita",
+              "count": 1
+            }
+          ],
+          "comments": "Primeiro combate do Acto 2"
+        },
+        {
+          "id": "A4_Visao_Kael",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Narrador",
+          "speaker_id": "Narrador",
+          "speaker_race": "—",
+          "text": "Uma visão mais intensa: vultos de Noxilith a fugir de uma luz roxa. Ouve-se um nome: 'Kael... salva-o.'",
+          "next": "A5_Desabamento",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "vfx",
+              "id": "eco_memoria_intenso"
+            },
+            {
+              "type": "sfx",
+              "id": "shard_chime_intense"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "A5_Desabamento",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "O teto começa a desabar! Tens de te mover rápido!",
+          "next": "A6_Unlock_Dash",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "camera_shake",
+              "intensity": 0.5,
+              "duration": 1.0
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "A6_Unlock_Dash",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Habilidade desbloqueada: Dash. Usa [Dash Key] para atravessar o perigo.",
+          "next": "A7_Tharion_Reflexao",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "ability_Dash",
+              "value": true
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "tutorial",
+              "text": "Usa o Dash para evitar o desabamento e aceder a novas áreas."
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "A7_Tharion_Reflexao",
+          "scene": "A_Ruinas_Entrada",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Quase... não consegui respirar. Preciso de mais do que coragem.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": "Fim da Cena A"
+        }
+      ]
+    },
+    {
+      "id": "B_Forjas_Orrin",
+      "nodes": [
+        {
+          "id": "B0_Encontro_Orrin",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Orrin? O ancião mineiro? O que fazes aqui, tão fundo?",
+          "next": "B1_Orrin_Resposta",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "B1_Orrin_Resposta",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "A forja é onde a coragem se dobra, não onde se encontra. Vim buscar o ferro que a Sombra não quer. E tu, vens buscar o quê?",
+          "next": "B2_Tharion_Machado",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "B2_Tharion_Machado",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Quero que o meu machado seja mais do que um pedaço de metal. Quero que me ajude a ver.",
+          "next": "B3_Orrin_Escolha",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "B3_Orrin_Escolha",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "O machado é um espelho. Mostra o que és. Tenho três forjas: a do Cristal, a do Etéreo e a da Obsidiana. Escolhe a tua natureza.",
+          "next": null,
+          "choices": [
+            {
+              "text": "[Cristal] Quero ver o perigo antes que me toque. Quero proteger-me.",
+              "next": "B4_Escolha_Cristal",
+              "conditions": []
+            },
+            {
+              "text": "[Etéreo] Quero ser rápido. Quero atravessar o que não me pode tocar.",
+              "next": "B4_Escolha_Etereo",
+              "conditions": []
+            },
+            {
+              "text": "[Obsidiana] Quero força. Quero partir o que me barra o caminho.",
+              "next": "B4_Escolha_Obsidiana",
+              "conditions": []
+            }
+          ],
+          "conditions": [
+            {
+              "var": "unlocked_AxeEvolution",
+              "op": "==",
+              "value": false
+            }
+          ],
+          "set": [],
+          "on_enter": [],
+          "comments": "Escolha da Evolução do Machado"
+        },
+        {
+          "id": "B4_Escolha_Cristal",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "O cristal reflete. Mas é frágil se não for temperado.",
+          "next": "B5_Orrin_Fecha",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "axe_Evolution",
+              "value": "Crystal"
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "give_ability",
+              "ability_id": "Axe_Crystal"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "B4_Escolha_Etereo",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "O etéreo é rápido. Mas a sombra agarra o que não tem peso.",
+          "next": "B5_Orrin_Fecha",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "axe_Evolution",
+              "value": "Ethereal"
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "give_ability",
+              "ability_id": "Axe_Ethereal"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "B4_Escolha_Obsidiana",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "A obsidiana é pesada. Parte a rocha, mas pode quebrar o teu espírito.",
+          "next": "B5_Orrin_Fecha",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "axe_Evolution",
+              "value": "Obsidian"
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "give_ability",
+              "ability_id": "Axe_Obsidian"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "B5_Orrin_Fecha",
+          "scene": "B_Forjas_Orrin",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "Agora, desce. O Guardião de Obsidiana não vai esperar que a tua lâmina esteja quente.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "unlocked_AxeEvolution",
+              "value": true
+            }
+          ],
+          "on_enter": [],
+          "comments": "Fim da Cena B"
+        }
+      ]
+    },
+    {
+      "id": "C_Boss_Guardião",
+      "nodes": [
+        {
+          "id": "C0_Narrador_Boss",
+          "scene": "C_Boss_Guardião",
+          "speaker": "Narrador",
+          "speaker_id": "Narrador",
+          "speaker_race": "—",
+          "text": "O Guardião, um eco de pedra e dever, ergue-se para proteger o que já não existe.",
+          "next": "C1_Tharion_Passar",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "music",
+              "cue": "boss_theme_01"
+            }
+          ],
+          "comments": "Introdução ao Boss"
+        },
+        {
+          "id": "C1_Tharion_Passar",
+          "scene": "C_Boss_Guardião",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Não quero lutar. Só quero passar.",
+          "next": "C2_Guardião_Resposta",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "C2_Guardião_Resposta",
+          "scene": "C_Boss_Guardião",
+          "speaker": "Guardião",
+          "speaker_id": "Guardião",
+          "speaker_race": "Corrompido",
+          "text": "Passagem... só para quem provar... o peso da memória.",
+          "next": "C3_Boss_Fight",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "C3_Boss_Fight",
+          "scene": "C_Boss_Guardião",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Confronto com o Guardião de Obsidiana.",
+          "next": "C4_Drop_Shard_Principal",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "boss_fight",
+              "boss_id": "ObsidianGuardian"
+            }
+          ],
+          "comments": "Dispara quando o Boss é derrotado"
+        },
+        {
+          "id": "C4_Drop_Shard_Principal",
+          "scene": "C_Boss_Guardião",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "O Guardião desmorona, revelando um Fragmento de Memória Principal.",
+          "next": "C5_Visao_Queda",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "has_MainShard_Act2",
+              "value": true
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "give_item",
+              "item_id": "Shard_Memoria_Principal_02"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "C5_Visao_Queda",
+          "scene": "C_Boss_Guardião",
+          "speaker": "Narrador",
+          "speaker_id": "Narrador",
+          "speaker_race": "—",
+          "text": "Visão: Kael Dorn (jovem) e Tharion (criança) estão a ser separados. Ouve-se Kael a dizer: 'O Rift é teu. Esconde-o. Volta quando fores forte.'",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "vfx",
+              "id": "cutscene_memoria_longa"
+            }
+          ],
+          "comments": "Fim da Cena C"
+        }
+      ]
+    },
+    {
+      "id": "D_Maela_Escolha",
+      "nodes": [
+        {
+          "id": "D0_Tharion_Maela",
+          "scene": "D_Maela_Escolha",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Maela, este fragmento... é diferente. Sinto a dor de quem o perdeu.",
+          "next": "D1_Maela_Fio",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "D1_Maela_Fio",
+          "scene": "D_Maela_Escolha",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "É o fio que te liga ao teu nome. O teu irmão, Kael Dorn, deu-te o Rift para te salvar. Agora, o fardo é teu. O que fazes com a memória da Queda?",
+          "next": null,
+          "choices": [
+            {
+              "text": "[Purificar] Aceito o fardo. O Rift é uma ferida, mas também uma promessa. Vou purificar o que Kael não conseguiu.",
+              "next": "D2_Escolha_Purificar",
+              "conditions": []
+            },
+            {
+              "text": "[Corromper] O Rift é poder, não um fardo. Kael usou-o para me esconder. Eu vou usá-lo para dominar o que me ameaça.",
+              "next": "D2_Escolha_Corromper",
+              "conditions": []
+            }
+          ],
+          "conditions": [
+            {
+              "var": "has_MainShard_Act2",
+              "op": "==",
+              "value": true
+            }
+          ],
+          "set": [],
+          "on_enter": [],
+          "comments": "Escolha Moral de Alto Impacto"
+        },
+        {
+          "id": "D2_Escolha_Purificar",
+          "scene": "D_Maela_Escolha",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "A luz é um caminho solitário. Mas o Tear lembra-se de ti.",
+          "next": "D3_Unlock_DoubleJump",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "morality_Purity",
+              "op": "+=",
+              "value": 5
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "vfx",
+              "id": "purify_burst"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "D2_Escolha_Corromper",
+          "scene": "D_Maela_Escolha",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "A sombra é um atalho. Mas a escuridão não tem fim.",
+          "next": "D3_Unlock_DoubleJump",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "morality_Purity",
+              "op": "-=",
+              "value": 5
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "vfx",
+              "id": "corrupt_burst"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "D3_Unlock_DoubleJump",
+          "scene": "D_Maela_Escolha",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Habilidade desbloqueada: Salto Duplo.",
+          "next": "D4_Maela_Fecha",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "give_ability",
+              "ability_id": "DoubleJump"
+            },
+            {
+              "type": "tutorial",
+              "text": "Usa [Jump Key] duas vezes para alcançar novos caminhos."
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "D4_Maela_Fecha",
+          "scene": "D_Maela_Escolha",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "O caminho para os Halls dos Lumivernis está aberto. A luz deles pode guiar-te... ou queimar-te. Vai, Tharion. O Ato 3 espera.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "unlocked_LumivernisHalls",
+              "value": true
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "transition",
+              "style": "fade_up"
+            }
+          ],
+          "comments": "FIM DO ACTO 2"
+        }
+      ]
+    }
+  ]
+}

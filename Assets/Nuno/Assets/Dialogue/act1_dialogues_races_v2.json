@@ -1,0 +1,693 @@
+{
+  "metadata": {
+    "title": "ShardBorne — Acto 1: Primeiras Memórias",
+    "version": "1.4.0",
+    "language": "pt-PT",
+    "authoring": "Nuno",
+    "notes": "Inclui router inteligente na casa do estranho.",
+    "speakers": {
+      "Tharion": {
+        "race": "Noxilith",
+        "portrait": "tharion_portrait",
+        "voice": "vox_noxi"
+      },
+      "Maela": {
+        "race": "Myridian",
+        "portrait": "maela_portrait",
+        "voice": "vox_myr"
+      },
+      "Kael Dorn": {
+        "race": "Noxilith",
+        "portrait": "kael_portrait",
+        "voice": "vox_drak",
+        "cloak_hint": "Coberto por manto no Acto 1."
+      },
+      "Mira": {
+        "race": "Lumivernis",
+        "portrait": "mira_portrait",
+        "voice": "vox_lumi"
+      },
+      "Ivo": {
+        "race": "Myridian",
+        "portrait": "ivo_portrait",
+        "voice": "vox_myr_young"
+      },
+      "Orrin": {
+        "race": "Drakthar",
+        "portrait": "orrin_portrait",
+        "voice": "vox_drak_old"
+      },
+      "Narrador": {
+        "race": "—",
+        "portrait": "",
+        "voice": "vox_narr"
+      }
+    }
+  },
+  "variables": {
+    "hasIntroPlayed": false,
+    "quest_FarmVeggies": "not_taken",
+    "count.potato": 0,
+    "enemy.farm.spawned": false,
+    "combat_TutorialDone": false,
+    "hasFirstShard": false,
+    "spoke_Weaver": false,
+    "hint_StrangerHouse": false,
+    "ability_HeavyStrike": false,
+    "unlocked_Subterranean": false,
+    "morality_Purity": 0,
+    "count.rocksBroken": 0,
+    "quest_FindStranger": "not_taken",
+    "quest_HeavyTraining": "not_taken"
+  },
+  "scenes": [
+    {
+      "id": "A_Vila_Abertura",
+      "nodes": [
+        {
+          "id": "A0_Narrador",
+          "scene": "A_Vila_Abertura",
+          "speaker": "Narrador",
+          "speaker_id": "Narrador",
+          "speaker_race": "—",
+          "text": "Tharion, o último Noxilith, não se lembra do seu passado. Vive os seus dias a ajudar o refúgio.",
+          "next": "A1_Tharion_Pensamento",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "hasIntroPlayed",
+              "value": true
+            },
+            {
+              "key": "quest_FarmVeggies",
+              "value": "collect"
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "tutorial",
+              "text": "Move-te com WASD/Analógico. Fala com quem tiver um 'E' por cima."
+            },
+            {
+              "type": "music",
+              "cue": "vila_leve"
+            }
+          ],
+          "comments": "Cutscene inicial"
+        },
+        {
+          "id": "A1_Tharion_Pensamento",
+          "scene": "A_Vila_Abertura",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Hoje vou aos campos colher o que for preciso para a sopa.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "A_Mira_Hint",
+          "scene": "A_Vila_Abertura",
+          "speaker": "Mira",
+          "speaker_id": "Mira",
+          "speaker_race": "Lumivernis",
+          "text": "Se fores aos campos, traz cenouras e tubérculos, o forno precisa de boas memórias para acender.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "A_Ivo_Hint",
+          "scene": "A_Vila_Abertura",
+          "speaker": "Ivo",
+          "speaker_id": "Ivo",
+          "speaker_race": "Myridian",
+          "text": "A Tecelã diz que os shards cantam. Se encostares o coração, ouves o fio certo.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "A_Orrin_Hint",
+          "scene": "A_Vila_Abertura",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "Coragem não é faísca de forja. É bater no mesmo ponto até a rocha ceder.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        }
+      ]
+    },
+    {
+      "id": "B_Farm_Colheita",
+      "nodes": [
+        {
+          "id": "B0_Trigger_Colheita",
+          "scene": "B_Farm_Colheita",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Colhe os legumes necessários.",
+          "next": null,
+          "choices": [],
+          "conditions": [
+            {
+              "var": "quest_FarmVeggies",
+              "op": "==",
+              "value": "collect"
+            }
+          ],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "objective",
+              "text": "Colhe 3 pontos de legumes no campo."
+            }
+          ],
+          "comments": "Mostra objetivo quando entras na Farm com a quest em 'collect'."
+        },
+        {
+          "id": "B1_Spawn_Inimigo",
+          "scene": "B_Farm_Colheita",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Ahh!… Mas que é isto?!",
+          "next": "B2_Combat_Tutorial",
+          "choices": [],
+          "conditions": [
+            {
+              "var": "quest_FarmVeggies",
+              "op": "==",
+              "value": "return"
+            },
+            {
+              "var": "enemy.farm.spawned",
+              "op": "==",
+              "value": false
+            }
+          ],
+          "set": [
+            {
+              "key": "enemy.farm.spawned",
+              "value": true
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "spawn_enemy",
+              "enemy_id": "MinhocaCorrompida",
+              "count": 1
+            },
+            {
+              "type": "camera_shake",
+              "intensity": 0.35,
+              "duration": 0.5
+            }
+          ],
+          "comments": "Só dispara quando o minijogo já pôs a quest em 'return' e ainda não spawnou o inimigo."
+        },
+        {
+          "id": "B2_Combat_Tutorial",
+          "scene": "B_Farm_Colheita",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Ataca com [X/Mouse1]. Esquiva com [B/Dash].",
+          "next": null,
+          "choices": [],
+          "conditions": [
+            {
+              "var": "combat_TutorialDone",
+              "op": "==",
+              "value": false
+            }
+          ],
+          "set": [
+            {
+              "key": "combat_TutorialDone",
+              "value": true
+            }
+          ],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "B3_Drop_Shard",
+          "scene": "B_Farm_Colheita",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Recebeste: Fragmento de Memória.",
+          "next": "B4_Eco_Cut",
+          "choices": [],
+          "conditions": [
+            {
+              "var": "hasFirstShard",
+              "op": "==",
+              "value": false
+            }
+          ],
+          "set": [
+            {
+              "key": "hasFirstShard",
+              "value": true
+            },
+            {
+              "key": "quest_FarmVeggies",
+              "value": "done"
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "give_item",
+              "item_id": "Shard_Memoria_01"
+            }
+          ],
+          "comments": "Dispara quando a minhoca morre (usa AutoTrigger/DropOnDeath para abrir este nó)."
+        },
+        {
+          "id": "B4_Eco_Cut",
+          "scene": "B_Farm_Colheita",
+          "speaker": "Narrador",
+          "speaker_id": "Narrador",
+          "speaker_race": "—",
+          "text": "Por um instante, o mundo desfoca. Vultos de pedra olham-te com olhos de luz… e desaparecem.",
+          "next": "B5_Tharion_Retorno",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "vfx",
+              "id": "eco_memoria_rapido"
+            },
+            {
+              "type": "sfx",
+              "id": "shard_chime"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "B5_Tharion_Retorno",
+          "scene": "B_Farm_Colheita",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Hmmm… objeto estranho. É melhor voltar ao refúgio e perceber o que se passa…",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        }
+      ]
+    },
+    {
+      "id": "C_Vila_Tecela",
+      "nodes": [
+        {
+          "id": "C0_Mira_Dica_Estranho",
+          "scene": "C_Vila_Tecela",
+          "speaker": "Mira",
+          "speaker_id": "Mira",
+          "speaker_race": "Lumivernis",
+          "text": "Criaturas? Não percebo disso… mas há um forasteiro nos ermos. Dizem que entende coisas antigas.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "hint_StrangerHouse",
+              "value": true
+            }
+          ],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "C1_Orrin_Coragem",
+          "scene": "C_Vila_Tecela",
+          "speaker": "Orrin",
+          "speaker_id": "Orrin",
+          "speaker_race": "Drakthar",
+          "text": "A coragem nasce nos cruzamentos. Escolhe um caminho e caminha.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "C2_Tecela_Abre",
+          "scene": "C_Vila_Tecela",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "Trouxeste os legumes... mas os teus olhos viram algo mais nos campos, não foi?",
+          "next": "C3_Tecela_Sobre_Criatura",
+          "choices": [],
+          "conditions": [
+            {
+              "var": "quest_FarmVeggies",
+              "op": "==",
+              "value": "done"
+            }
+          ],
+          "set": [],
+          "on_enter": [],
+          "comments": "Reage se a quest dos vegetais estiver feita."
+        },
+        {
+          "id": "C3_Tecela_Sobre_Criatura",
+          "scene": "C_Vila_Tecela",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Uma criatura... parecia feita de pedra e sombra. Atacou-me.",
+          "next": "C4_Tecela_Instrucao",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "C4_Tecela_Instrucao",
+          "scene": "C_Vila_Tecela",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "A corrupção está a alastrar... Eu apenas teço fios de luz, não luto guerras. Precisas de alguém que entenda a sombra.",
+          "next": "C5_Tecela_Envio_Final",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "C5_Tecela_Envio_Final",
+          "scene": "C_Vila_Tecela",
+          "speaker": "Maela",
+          "speaker_id": "Maela",
+          "speaker_race": "Myridian",
+          "text": "Procura o Forasteiro, Kael Dorn. Bate três vezes na porta dele e diz: ‘O fio partiu-se.’",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "spoke_Weaver",
+              "value": true
+            },
+            {
+              "key": "quest_FindStranger",
+              "value": "active"
+            },
+            {
+              "key": "hint_StrangerHouse",
+              "value": true
+            }
+          ],
+          "on_enter": [],
+          "comments": "Finaliza quest antiga (spoke_Weaver) e inicia nova (quest_FindStranger)."
+        }
+      ]
+    },
+    {
+      "id": "D_Casa_Estranho",
+      "nodes": [
+        {
+          "id": "D_ROOT_Stranger",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "...",
+          "next": "D0_Portao_Senha",
+          "choices": [],
+          "conditions": [],
+          "branches": [
+            {
+              "condition": {
+                "variable": "quest_HeavyTraining",
+                "type": "String",
+                "stringValue": "return",
+                "comparison": "Equal"
+              },
+              "nextNodeId": "D_Retorno_Pedras"
+            },
+            {
+              "condition": {
+                "variable": "quest_HeavyTraining",
+                "type": "String",
+                "stringValue": "unlock_skill",
+                "comparison": "Equal"
+              },
+              "nextNodeId": "D_Instrucao_Menu"
+            },
+            {
+              "condition": {
+                "variable": "quest_HeavyTraining",
+                "type": "String",
+                "stringValue": "active",
+                "comparison": "Equal"
+              },
+              "nextNodeId": "D3_Treino_Prompt"
+            }
+          ],
+          "set": [],
+          "on_enter": [],
+          "comments": "NÓ ROUTER: Redireciona com base no estado da missão."
+        },
+        {
+          "id": "D0_Portao_Senha",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Kael Dorn",
+          "speaker_id": "Kael Dorn",
+          "speaker_race": "Noxilith",
+          "text": "…",
+          "next": "D1_Senha_Dita",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "prompt",
+              "text": "Bate três vezes [E]"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "D1_Senha_Dita",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "O fio partiu-se.",
+          "next": "D2_Abertura",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "sfx",
+              "id": "trinco"
+            },
+            {
+              "type": "door_open"
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "D2_Abertura",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Kael Dorn",
+          "speaker_id": "Kael Dorn",
+          "speaker_race": "Noxilith",
+          "text": "Respostas não; práticas. Queres viver? Aprende a acertar.",
+          "next": "D3_Treino_Prompt",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        },
+        {
+          "id": "D3_Treino_Prompt",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Treino: parte 3 rochas de treino no exterior.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "quest_FindStranger", 
+              "value": "done" 
+            },
+            {
+              "key": "quest_HeavyTraining",
+              "value": "active"
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "tutorial",
+              "text": "Ataca até as rochas de desintregarem."
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "D_Retorno_Pedras",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Kael Dorn",
+          "speaker_id": "Kael Dorn",
+          "speaker_race": "Noxilith",
+          "text": "Força bruta sem foco é desperdício. Mas tens potencial. Agora foca essa energia.",
+          "next": "D_Instrucao_Menu",
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": "Nó de SUCESSO. Chega aqui se quest_HeavyTraining == return"
+        },
+        {
+          "id": "D_Instrucao_Menu",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Abre o menu de Habilidades (X) e desbloqueia o Golpe Pesado.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "quest_HeavyTraining",
+              "value": "unlock_skill"
+            }
+          ],
+          "on_enter": [],
+          "comments": "Muda quest para 'unlock_skill'."
+        },
+        {
+          "id": "D4_Unlock_Heavy",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Habilidade desbloqueada: Golpe Pesado.",
+          "next": "D5_Estranho_Fecha",
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "ability_HeavyStrike",
+              "value": true
+            }
+          ],
+          "on_enter": [],
+          "comments": "Este nó é chamado quando desbloqueias a skill no menu."
+        },
+        {
+          "id": "D5_Estranho_Fecha",
+          "scene": "D_Casa_Estranho",
+          "speaker": "Kael Dorn",
+          "speaker_id": "Kael Dorn",
+          "speaker_race": "Noxilith",
+          "text": "Sob os teus pés há cidades rachadas. Desce pronto.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [],
+          "on_enter": [],
+          "comments": ""
+        }
+      ]
+    },
+    {
+      "id": "E_Entrada_Subterraneo",
+      "nodes": [
+        {
+          "id": "E0_Porta_Rocha",
+          "scene": "E_Entrada_Subterraneo",
+          "speaker": "Sistema",
+          "speaker_id": "",
+          "speaker_race": "",
+          "text": "Rocha com fissuras: usa o Golpe Pesado para abrir caminho.",
+          "next": "E1_Tharion_Desce",
+          "choices": [],
+          "conditions": [
+            {
+              "var": "ability_HeavyStrike",
+              "op": "==",
+              "value": true
+            }
+          ],
+          "set": [],
+          "on_enter": [
+            {
+              "type": "prompt",
+              "text": "Mantém [Ataque] para carregar."
+            }
+          ],
+          "comments": ""
+        },
+        {
+          "id": "E1_Tharion_Desce",
+          "scene": "E_Entrada_Subterraneo",
+          "speaker": "Tharion",
+          "speaker_id": "Tharion",
+          "speaker_race": "Noxilith",
+          "text": "Seja luz ou sombra… preciso de saber quem fui.",
+          "next": null,
+          "choices": [],
+          "conditions": [],
+          "set": [
+            {
+              "key": "unlocked_Subterranean",
+              "value": true
+            }
+          ],
+          "on_enter": [
+            {
+              "type": "transition",
+              "style": "fade_down"
+            },
+            {
+              "type": "music",
+              "cue": "subterraneo_eco"
+            }
+          ],
+          "comments": ""
+        }
+      ]
+    }
+  ]
+}

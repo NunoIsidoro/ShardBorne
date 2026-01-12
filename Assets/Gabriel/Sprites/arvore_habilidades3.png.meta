@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 70f5ca08c64200c4faf35c93090621dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 37401380748590072
+    second: arvore_habilidades3_0
+  - first:
+      213: 3413907741192480143
+    second: arvore_habilidades3_1
+  - first:
+      213: 6946344034401743215
+    second: arvore_habilidades3_2
+  - first:
+      213: -8689172202051035433
+    second: arvore_habilidades3_3
+  - first:
+      213: -4185478776342621004
+    second: arvore_habilidades3_4
+  - first:
+      213: -4105224155931695565
+    second: arvore_habilidades3_5
+  - first:
+      213: -4712869783140777857
+    second: arvore_habilidades3_6
+  - first:
+      213: -2690969566725563242
+    second: arvore_habilidades3_7
+  - first:
+      213: 7937122288603079531
+    second: arvore_habilidades3_8
+  - first:
+      213: -871359820744710165
+    second: arvore_habilidades3_9
+  - first:
+      213: 4638665326230714060
+    second: arvore_habilidades3_10
+  - first:
+      213: 6037644603105877208
+    second: arvore_habilidades3_11
+  - first:
+      213: -3274297577756661933
+    second: arvore_habilidades3_12
+  - first:
+      213: -598400845925761695
+    second: arvore_habilidades3_13
+  - first:
+      213: 7328562197594920772
+    second: arvore_habilidades3_14
+  - first:
+      213: -703237210996466251
+    second: arvore_habilidades3_15
+  - first:
+      213: -8715276404038254112
+    second: arvore_habilidades3_16
+  - first:
+      213: -5912228717072593409
+    second: arvore_habilidades3_17
+  - first:
+      213: -8112564518479040886
+    second: arvore_habilidades3_18
+  - first:
+      213: 955352038200688037
+    second: arvore_habilidades3_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: arvore_habilidades3_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 36
+        width: 97
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbf0ad8b50e48000800000000000000
+      internalID: 37401380748590072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 36
+        width: 112
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85ebb1c003a06f20800000000000000
+      internalID: 3413907741192480143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 36
+        width: 98
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f617b22981f566060800000000000000
+      internalID: 6946344034401743215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_3
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 18
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7de9c806bebd96780800000000000000
+      internalID: -8689172202051035433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 18
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b459218a313ae5c0800000000000000
+      internalID: -4185478776342621004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_5
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 18
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336a65e61605707c0800000000000000
+      internalID: -4105224155931695565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_6
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 18
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70c83fe6e5889eb0800000000000000
+      internalID: -4712869783140777857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_7
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 18
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c9fe9bf61c7aad0800000000000000
+      internalID: -2690969566725563242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_8
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 18
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63a5073ba2562e60800000000000000
+      internalID: 7937122288603079531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_9
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 18
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7a6f41cde48e3f0800000000000000
+      internalID: -871359820744710165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 14
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc637e99989df5040800000000000000
+      internalID: 4638665326230714060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_11
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 18
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc1e2817c50ac350800000000000000
+      internalID: 6037644603105877208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_12
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 18
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35764e473bb5f82d0800000000000000
+      internalID: -3274297577756661933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_13
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 18
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d3d41e99d02b7f0800000000000000
+      internalID: -598400845925761695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_14
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 18
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44750068d7844b560800000000000000
+      internalID: 7328562197594920772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_15
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 18
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd18b58b799d36f0800000000000000
+      internalID: -703237210996466251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_16
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 18
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1c4f9394e1d0780800000000000000
+      internalID: -8715276404038254112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_17
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 18
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd46006e4b83fda0800000000000000
+      internalID: -5912228717072593409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_18
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 18
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e6e9a7d816a6f80800000000000000
+      internalID: -8112564518479040886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: arvore_habilidades3_19
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 18
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5adb568fd97124d00800000000000000
+      internalID: 955352038200688037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      arvore_habilidades3_0: 37401380748590072
+      arvore_habilidades3_1: 3413907741192480143
+      arvore_habilidades3_10: 4638665326230714060
+      arvore_habilidades3_11: 6037644603105877208
+      arvore_habilidades3_12: -3274297577756661933
+      arvore_habilidades3_13: -598400845925761695
+      arvore_habilidades3_14: 7328562197594920772
+      arvore_habilidades3_15: -703237210996466251
+      arvore_habilidades3_16: -8715276404038254112
+      arvore_habilidades3_17: -5912228717072593409
+      arvore_habilidades3_18: -8112564518479040886
+      arvore_habilidades3_19: 955352038200688037
+      arvore_habilidades3_2: 6946344034401743215
+      arvore_habilidades3_3: -8689172202051035433
+      arvore_habilidades3_4: -4185478776342621004
+      arvore_habilidades3_5: -4105224155931695565
+      arvore_habilidades3_6: -4712869783140777857
+      arvore_habilidades3_7: -2690969566725563242
+      arvore_habilidades3_8: 7937122288603079531
+      arvore_habilidades3_9: -871359820744710165
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

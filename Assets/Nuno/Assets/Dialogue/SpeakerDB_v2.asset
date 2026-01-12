@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2eb7d493c3c7d43a319971ddf1dbc1, type: 3}
+  m_Name: SpeakerDB_v2
+  m_EditorClassIdentifier: Assembly-CSharp::SpeakerDB
+  entries:
+  - id: Tharion
+    portrait: {fileID: 21300000, guid: 844e7f69fda2d094e871a9e8dc133032, type: 3}
+    uiColor: {r: 0, g: 0, b: 0, a: 0}
+    voiceClip: {fileID: 8300000, guid: 6939d36ec9bbb2545a1384ec8b70762e, type: 3}
+    race: Noxilith
+  - id: Kael Dorn
+    portrait: {fileID: 9091703995915244328, guid: 4facbea73c2005544bc1e839a04d0443, type: 3}
+    uiColor: {r: 0, g: 0, b: 0, a: 0}
+    voiceClip: {fileID: 8300000, guid: 6939d36ec9bbb2545a1384ec8b70762e, type: 3}
+    race: Noxilith
+  - id: Mira
+    portrait: {fileID: 21300000, guid: 482c4428d2c371c49aee8b4b3bb51017, type: 3}
+    uiColor: {r: 0.107467085, g: 0.44240725, b: 0.990566, a: 0}
+    voiceClip: {fileID: 8300000, guid: 6939d36ec9bbb2545a1384ec8b70762e, type: 3}
+    race: Lumivernis
+  - id: Ivo
+    portrait: {fileID: 21300000, guid: 07dcbcca029ce794889155e9264ddc05, type: 3}
+    uiColor: {r: 0, g: 0, b: 0, a: 0}
+    voiceClip: {fileID: 8300000, guid: 6939d36ec9bbb2545a1384ec8b70762e, type: 3}
+    race: Myridian
+  - id: Maela
+    portrait: {fileID: 21300000, guid: 518e8a4546933a74ab8844ff5dd369f9, type: 3}
+    uiColor: {r: 0, g: 0, b: 0, a: 0}
+    voiceClip: {fileID: 8300000, guid: 6939d36ec9bbb2545a1384ec8b70762e, type: 3}
+    race: Myridian
+  - id: Orrin
+    portrait: {fileID: 21300000, guid: 002925851ea2be84f9d7ab727c8ac284, type: 3}
+    uiColor: {r: 0, g: 0, b: 0, a: 0}
+    voiceClip: {fileID: 0}
+    race: Myridian

@@ -1,4 +1,3 @@
-repository "ShardBorne/ShardBorne@6872782970111@cloud"
+rep "ShardBorne/ShardBorne@6872782970111@cloud"
   path "/"
-    br "/main"
-    co "/main"
+    smartbranch "/main"

@@ -1,0 +1,40 @@
+{
+  "speakers": {
+    "Tharion": {
+      "race": "Noxilith",
+      "portrait": "tharion_portrait",
+      "voice": "vox_noxi"
+    },
+    "Maela": {
+      "race": "Myridian",
+      "portrait": "maela_portrait",
+      "voice": "vox_myr"
+    },
+    "Kael Dorn": {
+      "race": "Noxilith",
+      "portrait": "kael_portrait",
+      "voice": "vox_drak",
+      "cloak_hint": "Coberto por manto no Acto 1; identidade Noxilith não revelada de imediato."
+    },
+    "Mira": {
+      "race": "Lumivernis",
+      "portrait": "mira_portrait",
+      "voice": "vox_lumi"
+    },
+    "Ivo": {
+      "race": "Myridian",
+      "portrait": "ivo_portrait",
+      "voice": "vox_myr_young"
+    },
+    "Orrin": {
+      "race": "Drakthar",
+      "portrait": "orrin_portrait",
+      "voice": "vox_drak_old"
+    },
+    "Narrador": {
+      "race": "—",
+      "portrait": "",
+      "voice": "vox_narr"
+    }
+  }
+}

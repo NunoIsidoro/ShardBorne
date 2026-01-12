@@ -1,0 +1,567 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938e47b1e89b8b54ebc6862f50c6bade, type: 3}
+  m_Name: Act1_DialogueAsset
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
+  startNodeId: A0_Narrador
+  nodes:
+  - id: A0_Narrador
+    type: 0
+    speaker: Narrador
+    speakerRace: "\u2014"
+    text: "Tharion, o \xFAltimo Noxilith, n\xE3o se lembra do seu passado. Vive os
+      seus dias a ajudar o ref\xFAgio."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: A1_Tharion_Pensamento
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: hasIntroPlayed
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - actionType: 0
+      variableName: quest_FarmVeggies
+      stringValue: collect
+      numberValue: 0
+      boolValue: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: A1_Tharion_Pensamento
+    type: 0
+    speaker: Tharion
+    speakerRace: Noxilith
+    text: Hoje vou aos campos colher o que for preciso para a sopa.
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: A_Mira_Hint
+    type: 0
+    speaker: Mira
+    speakerRace: Lumivernis
+    text: "Se fores aos campos, traz cenouras e tub\xE9rculos, o forno precisa de
+      boas mem\xF3rias para acender."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: A_Ivo_Hint
+    type: 0
+    speaker: Ivo
+    speakerRace: Myridian
+    text: "A Tecel\xE3 diz que os shards cantam. Se encostares o cora\xE7\xE3o, ouves
+      o fio certo."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: A_Orrin_Hint
+    type: 0
+    speaker: Orrin
+    speakerRace: Drakthar
+    text: "Coragem n\xE3o \xE9 fa\xEDsca de forja. \xC9 bater no mesmo ponto at\xE9
+      a rocha ceder."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: B0_Trigger_Colheita
+    type: 2
+    speaker: Sistema
+    speakerRace: 
+    text: "Colhe os legumes necess\xE1rios."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches:
+    - condition:
+        variable: quest_FarmVeggies
+        type: 0
+        comparison: 0
+        stringValue: collect
+        numberValue: 0
+        boolValue: 0
+      nextNodeId: 
+    onEnterActions: []
+    onExitActions: []
+  - id: B1_Spawn_Inimigo
+    type: 2
+    speaker: Tharion
+    speakerRace: Noxilith
+    text: "Ahh!\u2026 Mas que \xE9 isto?!"
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: B2_Combat_Tutorial
+    choices: []
+    branches:
+    - condition:
+        variable: quest_FarmVeggies
+        type: 0
+        comparison: 0
+        stringValue: return
+        numberValue: 0
+        boolValue: 0
+      nextNodeId: B2_Combat_Tutorial
+    - condition:
+        variable: enemy.farm.spawned
+        type: 2
+        comparison: 0
+        stringValue: 
+        numberValue: 0
+        boolValue: 0
+      nextNodeId: B2_Combat_Tutorial
+    onEnterActions:
+    - actionType: 0
+      variableName: enemy.farm.spawned
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: B2_Combat_Tutorial
+    type: 2
+    speaker: Sistema
+    speakerRace: 
+    text: Ataca com [X/Mouse1]. Esquiva com [B/Dash].
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches:
+    - condition:
+        variable: combat_TutorialDone
+        type: 2
+        comparison: 0
+        stringValue: 
+        numberValue: 0
+        boolValue: 0
+      nextNodeId: 
+    onEnterActions:
+    - actionType: 0
+      variableName: combat_TutorialDone
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: B3_Drop_Shard
+    type: 2
+    speaker: Sistema
+    speakerRace: 
+    text: "Recebeste: Fragmento de Mem\xF3ria."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: B4_Eco_Cut
+    choices: []
+    branches:
+    - condition:
+        variable: hasFirstShard
+        type: 2
+        comparison: 0
+        stringValue: 
+        numberValue: 0
+        boolValue: 0
+      nextNodeId: B4_Eco_Cut
+    onEnterActions:
+    - actionType: 0
+      variableName: hasFirstShard
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - actionType: 0
+      variableName: quest_FarmVeggies
+      stringValue: done
+      numberValue: 0
+      boolValue: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: B4_Eco_Cut
+    type: 0
+    speaker: Narrador
+    speakerRace: "\u2014"
+    text: "Por um instante, o mundo desfoca. Vultos de pedra olham-te com olhos de
+      luz\u2026 e desaparecem."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: B5_Tharion_Retorno
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: B5_Tharion_Retorno
+    type: 0
+    speaker: Tharion
+    speakerRace: Noxilith
+    text: "Hmmm\u2026 objeto estranho. \xC9 melhor voltar ao ref\xFAgio e perceber
+      o que se passa\u2026"
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: C0_Mira_Dica_Estranho
+    type: 0
+    speaker: Mira
+    speakerRace: Lumivernis
+    text: "Criaturas? N\xE3o percebo disso\u2026 mas h\xE1 um forasteiro nos ermos.
+      Dizem que entende coisas antigas."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: hint_StrangerHouse
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: C1_Orrin_Coragem
+    type: 0
+    speaker: Orrin
+    speakerRace: Drakthar
+    text: A coragem nasce nos cruzamentos. Escolhe um caminho e caminha.
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: C2_Tecela_Abre
+    type: 2
+    speaker: Maela
+    speakerRace: Myridian
+    text: "Trouxeste os legumes... mas os teus olhos viram algo mais nos campos,
+      n\xE3o foi?"
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: C3_Tecela_Sobre_Criatura
+    choices: []
+    branches:
+    - condition:
+        variable: quest_FarmVeggies
+        type: 0
+        comparison: 0
+        stringValue: done
+        numberValue: 0
+        boolValue: 0
+      nextNodeId: C3_Tecela_Sobre_Criatura
+    onEnterActions: []
+    onExitActions: []
+  - id: C3_Tecela_Sobre_Criatura
+    type: 0
+    speaker: Tharion
+    speakerRace: Noxilith
+    text: Uma criatura... parecia feita de pedra e sombra. Atacou-me.
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: C4_Tecela_Instrucao
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: C4_Tecela_Instrucao
+    type: 0
+    speaker: Maela
+    speakerRace: Myridian
+    text: "A corrup\xE7\xE3o est\xE1 a alastrar... Eu apenas te\xE7o fios de luz,
+      n\xE3o luto guerras. Precisas de algu\xE9m que entenda a sombra."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: C5_Tecela_Envio_Final
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: C5_Tecela_Envio_Final
+    type: 0
+    speaker: Maela
+    speakerRace: Myridian
+    text: "Procura o Forasteiro, Kael Dorn. Bate tr\xEAs vezes na porta dele e diz:
+      \u2018O fio partiu-se.\u2019"
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: spoke_Weaver
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - actionType: 0
+      variableName: quest_FindStranger
+      stringValue: active
+      numberValue: 0
+      boolValue: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - actionType: 0
+      variableName: hint_StrangerHouse
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: D_ROOT_Stranger
+    type: 0
+    speaker: Sistema
+    speakerRace: 
+    text: ...
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: D0_Portao_Senha
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: D0_Portao_Senha
+    type: 0
+    speaker: Kael Dorn
+    speakerRace: Noxilith
+    text: "\u2026"
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: D1_Senha_Dita
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: D1_Senha_Dita
+    type: 0
+    speaker: Tharion
+    speakerRace: Noxilith
+    text: O fio partiu-se.
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: D2_Abertura
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: D2_Abertura
+    type: 0
+    speaker: Kael Dorn
+    speakerRace: Noxilith
+    text: "Respostas n\xE3o; pr\xE1ticas. Queres viver? Aprende a acertar."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: D3_Treino_Prompt
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: D3_Treino_Prompt
+    type: 0
+    speaker: Sistema
+    speakerRace: 
+    text: 'Treino: parte 3 rochas de treino no exterior.'
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: quest_FindStranger
+      stringValue: done
+      numberValue: 0
+      boolValue: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    - actionType: 0
+      variableName: quest_HeavyTraining
+      stringValue: active
+      numberValue: 0
+      boolValue: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: D_Retorno_Pedras
+    type: 0
+    speaker: Kael Dorn
+    speakerRace: Noxilith
+    text: "For\xE7a bruta sem foco \xE9 desperd\xEDcio. Mas tens potencial. Agora
+      foca essa energia."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: D_Instrucao_Menu
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: D_Instrucao_Menu
+    type: 0
+    speaker: Sistema
+    speakerRace: 
+    text: Abre o menu de Habilidades (X) e desbloqueia o Golpe Pesado.
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: quest_HeavyTraining
+      stringValue: unlock_skill
+      numberValue: 0
+      boolValue: 0
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: D4_Unlock_Heavy
+    type: 0
+    speaker: Sistema
+    speakerRace: 
+    text: 'Habilidade desbloqueada: Golpe Pesado.'
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: D5_Estranho_Fecha
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: ability_HeavyStrike
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []
+  - id: D5_Estranho_Fecha
+    type: 0
+    speaker: Kael Dorn
+    speakerRace: Noxilith
+    text: "Sob os teus p\xE9s h\xE1 cidades rachadas. Desce pronto."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions: []
+    onExitActions: []
+  - id: E0_Porta_Rocha
+    type: 2
+    speaker: Sistema
+    speakerRace: 
+    text: 'Rocha com fissuras: usa o Golpe Pesado para abrir caminho.'
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: E1_Tharion_Desce
+    choices: []
+    branches:
+    - condition:
+        variable: ability_HeavyStrike
+        type: 2
+        comparison: 0
+        stringValue: 
+        numberValue: 0
+        boolValue: 1
+      nextNodeId: E1_Tharion_Desce
+    onEnterActions: []
+    onExitActions: []
+  - id: E1_Tharion_Desce
+    type: 0
+    speaker: Tharion
+    speakerRace: Noxilith
+    text: "Seja luz ou sombra\u2026 preciso de saber quem fui."
+    portrait: {fileID: 0}
+    voiceClip: {fileID: 0}
+    voiceDelayAfter: 0
+    nextNodeId: 
+    choices: []
+    branches: []
+    onEnterActions:
+    - actionType: 0
+      variableName: unlocked_Subterranean
+      stringValue: 
+      numberValue: 0
+      boolValue: 1
+      unityEvent:
+        m_PersistentCalls:
+          m_Calls: []
+    onExitActions: []

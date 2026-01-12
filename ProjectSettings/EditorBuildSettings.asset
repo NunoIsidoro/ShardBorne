@@ -5,9 +5,42 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8d809711f4b06a84680e1a623229ed85
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c313b6fb869001243a8cbaf444d029ef
+  - enabled: 1
+    path: Assets/Scenes/A_Vila_Abertura.unity
+    guid: c4d4c6f38f1057948b17d01d244590c8
+  - enabled: 1
+    path: Assets/Scenes/CrossingHub.unity
+    guid: e376d8b0a8f94cd4f89aa36b525484f9
+  - enabled: 1
+    path: Assets/Scenes/Farm.unity
+    guid: 217460c38be8b4d469dfaa45fcb0e52d
+  - enabled: 1
+    path: Assets/Scenes/Stranger_House.unity
+    guid: c5787b37e5cff6f44a1a801266599f9b
+  - enabled: 1
+    path: Assets/Scenes/Underground1.unity
+    guid: 2a46561608d5647499d16e87ab20f1a2
+  - enabled: 1
+    path: Assets/Scenes/Underground2.unity
+    guid: 09cd1970e0cb0cd48ba7a35a205c3233
+  - enabled: 1
+    path: Assets/Scenes/Underground3.unity
+    guid: 7d7f9f9ef34c19345a60cd52883c9be4
+  - enabled: 1
+    path: Assets/Scenes/Winning_Scene.unity
+    guid: a98a52e162628cb4ba84ec1cc35faf4d
+  - enabled: 1
+    path: Assets/Scenes/Finish_TryAgain_Scene.unity
+    guid: 0796085ab8f287a4f9ecc23ba038b366
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d43eae3cebee2f142bcda0ed23d900db, type: 3}
   m_UseUCBPForAssetBundles: 0
