@@ -53,7 +53,7 @@ Minijogos: Atividades secundárias, como um minijogo de colheita baseado em timi
 IA de Inimigos: Inimigos com máquinas de estados simples para patrulha, deteção e ataque.
 
 •
-Boss Fights Épicas: Confrontos memoráveis, como o Guardião de Obsidiana, com múltiplas fases, ataques variados e cutscenes integradas.
+Boss Fights Épicas: Confrontos memoráveis, como a tecelã corrompida, com múltiplas ataques e habilidades.
 
 5. Aspetos Técnicos
 
